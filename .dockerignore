@@ -1,0 +1,195 @@
+# Streamlined .dockerignore for Jais AI
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+dist/
+*.egg-info/
+
+# Virtual environments  
+venv_metal/
+.env
+.venv
+
+# Development
+.git/
+.gitignore
+*.md
+!README.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+logs/
+temp/
+
+# Large model files (mount as volume instead)
+models/*.gguf
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Sensitive environment/config files (but keep .env.example and config/*.json)
+.env
+.env.*
+*.env
+.envrc
+config.ini
+secrets.yaml
+*.key
+*.pem
+*.crt
+*.p12
+
+# Model files - exclude from image to reduce size
+# Models should be mounted as volumes or downloaded at runtime
+models/*.gguf
+models/*.bin
+models/*.h5
+models/*.safetensors
+models/*.pt
+models/*.pth
+models/*.pkl
+models/*.model
+models/*.weights
+*.onnx
+*.tflite
+
+# Logs and temporary files
+logs/
+*.log
+*.log.*
+log_*
+tmp/
+temp/
+.tmp/
+cache/
+.cache/
+*.swp
+*.swo
+*~
+
+# Development/test cache and coverage (but keep test scripts and README)
+pytest_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+.github/
+.gitlab-ci.yml
+
+# IDE/editor files
+.vscode/
+.idea/
+.vim/
+.netrwhist
+*.sublime-*
+.DS_Store
+Thumbs.db
+
+# Docker related files (do NOT exclude Dockerfile or docker-compose files)
+# .dockerignore itself should be included for transparency
+kubernetes/
+k8s/
+helm/
+
+# CI/CD and deployment
+.circleci/
+.travis.yml
+.github/workflows/
+azure-pipelines.yml
+Jenkinsfile
+.gitlabci/
+
+# Node/JS package managers (not used, but safe to exclude)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+Pipfile.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+
+# Large datasets and training data (keep config/ and .env.example)
+data/
+datasets/
+training_data/
+*.csv
+*.parquet
+*.h5
+*.hdf5
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Performance and profiling
+.prof
+*.prof
+perf.data*
+
+# Security scans
+.snyk
+.whitesource
+
+# Local development overrides
+Dockerfile.local
+docker-compose.override.yml
+.env.local
+config.local.json
+
+# ---
+# DO NOT EXCLUDE:
+# - README.md, LICENSE*, *.md, *.txt, *.rst, TEST_PLAN.md, scripts/, tests/, config/*.json, .env.example, Dockerfile*, docker-compose*.yml
+# These are needed for documentation, reproducibility, and public release.

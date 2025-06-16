@@ -1,0 +1,51 @@
+{
+  "performance_presets": {
+    "docker": {
+      "description": "Optimized settings for Docker containers (auto-detects ARM64/AMD64)",
+      "server_config": {
+        "n_ctx": 2048,
+        "n_threads": -1,
+        "n_gpu_layers": 0,
+        "n_batch": 64,
+        "use_mmap": true,
+        "use_mlock": false
+      }
+    },
+    "native_metal": {
+      "description": "Maximum performance with Metal GPU acceleration (macOS only)",
+      "server_config": {
+        "n_ctx": 4096,
+        "n_threads": 12,
+        "n_gpu_layers": -1,
+        "n_batch": 128,
+        "use_mmap": true,
+        "use_mlock": true
+      }
+    }
+  },
+  "model_config": {
+    "model_name": "mradermacher/jais-family-30b-16k-chat-i1-GGUF",
+    "model_path": "/app/models/jais-family-30b-16k-chat.i1-Q4_K_M.gguf",
+    "model_type": "GGUF",
+    "quantization": "Q4_K_M",
+    "context_length": 2048,
+    "system_message": "You are Jais, a helpful AI assistant created by Inception AI. You are knowledgeable, helpful, and can communicate in both English and Arabic. You provide accurate, helpful, and respectful responses.",
+    "parameters": {
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "top_k": 40,
+      "repeat_penalty": 1.2,
+      "min_p": 0.05,
+      "max_tokens": 1024
+    }
+  },
+  "server_config": {
+    "n_ctx": 2048,
+    "n_threads": -1,
+    "n_gpu_layers": -1,
+    "n_batch": 64,
+    "use_mmap": true,
+    "use_mlock": false,
+    "chat_format": "chatml"
+  }
+}

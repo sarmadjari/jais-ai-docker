@@ -1,0 +1,14 @@
+# Core dependencies for mradermacher GGUF model support
+# Using more stable version for Docker ARM64 environments
+llama-cpp-python==0.2.90
+flask==3.0.0
+gunicorn==21.2.0
+
+# Utility dependencies
+numpy==1.26.2
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Optional: for advanced features and monitoring
+psutil==5.9.6
+huggingface-hub==0.19.4
